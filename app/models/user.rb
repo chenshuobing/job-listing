@@ -7,4 +7,5 @@ class User < ApplicationRecord
           #  email == '111111@qq.com'
           is_admin
          end
+         has_many :resumes
 end
