@@ -14,6 +14,6 @@ Rails.application.routes.draw do
  resources :jobs do
     resources :resumes
  end
- root 'jobs#index'
-
+ #root 'jobs#index'
+root 'welcome#index'
 end
