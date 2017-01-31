@@ -17,33 +17,41 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
-.jumbotron {
-  background-image:url('http://www.punchedclocks.com/wp-content/uploads/2015/03/job-seacrhing.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 110px;
+//
+// .jumbotron {
+// //  background-image:url('https://ww4.sinaimg.cn/large/006tKfTcgy1fc90y6vygcj31cx0u0h30.jpg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//    padding: 0px;
+//    margin:0px;
+// }
+.head_ground {
+background-color: #eeeeee;
 }
-
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: left;;
-  margin-top: 200px;
-  margin-bottom: 80px;
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  // background-color : #99ccff;
+  color: white;
 }
 
 .slogan {
   margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: left;;
-  color: #337ab7;
+  margin-bottom: 10px;
+  text-align: center;
+  color: blue;
+
   top: 12px;
 }
 
 .lead {
   margin-bottom: 60px;
-  text-align: left;;
+  text-align: center;
   color: white;
+  margin-bottom: 10px;
 }
 
 .caption {
@@ -73,3 +81,37 @@
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
 }
+
+.img {
+    margin: 30px;
+    // border: 1px solid #ffffff;
+    border: none;
+    float: center;
+
+    // width: 180px;
+}
+
+.img:hover {
+    border: 1px solid #eee;
+}
+
+// .img img {
+//     width: 100%;
+//     height: auto;
+// }
+
+.desc {
+    font-family: "Courier New";
+    padding-top:  10px;
+    text-align: center;
+
+}
+.no_link:hover {
+    text-decoration: none;
+}
+
+// .center-block {
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//  }
