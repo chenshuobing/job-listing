@@ -19,6 +19,59 @@ class JobsController < ApplicationController
                 Job.published.recent
             end
   end
+
+  def internet_electronic_commerce
+    # @jobs = Job.all
+    # @jobs = Job.published.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.published.where(:category => "internet_electronic_commerce").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.published.where(:category => "internet_electronic_commerce").order('wage_upper_bound DESC')
+            else
+                Job.published.where(:category => "internet_electronic_commerce").recent
+            end
+  end
+
+  def finace_investment_security
+    # @jobs = Job.all
+    # @jobs = Job.published.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.published.where(:category => "finace_investment_security").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.published.where(:category => "finace_investment_security").order('wage_upper_bound DESC')
+            else
+                Job.published.where(:category => "finace_investment_security").recent
+            end
+  end
+
+  def car
+    # @jobs = Job.all
+    # @jobs = Job.published.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.published.where(:category => "cars_auto_parts").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.published.where(:category => "cars_auto_parts").order('wage_upper_bound DESC')
+            else
+                Job.published.where(:category => "cars_auto_parts").recent
+            end
+  end
+
+  def estate
+    # @jobs = Job.all
+    # @jobs = Job.published.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.published.where(:category => "estate").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.published.where(:category => "estate").order('wage_upper_bound DESC')
+            else
+                Job.published.where(:category => "estate").recent
+            end
+  end
+
   def new
     @job = Job.new
   end
@@ -49,6 +102,6 @@ class JobsController < ApplicationController
   end
   private
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :category, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 end

@@ -4,6 +4,7 @@
 
 <%= f.input :title%>
 <%= f.input :description%>
+<%= f.input :category, :collection => ["internet_electronic_commerce","finace_investment_security", "cars_auto_parts", "estate"], :selected => "internet_electronic_commerce" %>
 <%= f.input :wage_lower_bound, :label => "薪资下限"%>
 <%= f.input :wage_upper_bound, :label => "薪资上限"%>
 <%= f.input :contact_email%>

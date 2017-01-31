@@ -12,6 +12,12 @@ Rails.application.routes.draw do
    end
  end
  resources :jobs do
+   collection do
+     get :internet_electronic_commerce
+     get :finace_investment_security
+     get :cars_auto_parts
+     get :estate
+   end
     resources :resumes
  end
  #root 'jobs#index'
