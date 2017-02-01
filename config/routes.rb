@@ -4,7 +4,14 @@ Rails.application.routes.draw do
  # resources :jobs
  namespace :admin do
    resources :jobs do
+     collection do
+       get :internet_electronic_commerce
+       get :finace_investment_security
+       get :cars_auto_parts
+       get :estate
+     end
      member do
+
        post :publish
        post :hide
      end

@@ -38,6 +38,58 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def internet_electronic_commerce
+    # @jobs = Job.all
+    # @jobs = Job.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.where(:category => "internet_electronic_commerce").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.where(:category => "internet_electronic_commerce").order('wage_upper_bound DESC')
+            else
+                Job.where(:category => "internet_electronic_commerce").recent
+            end
+  end
+
+  def finace_investment_security
+    # @jobs = Job.all
+    # @jobs = Job.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.where(:category => "finace_investment_security").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.where(:category => "finace_investment_security").order('wage_upper_bound DESC')
+            else
+                Job.where(:category => "finace_investment_security").recent
+            end
+  end
+
+  def cars_auto_parts
+    # @jobs = Job.all
+    # @jobs = Job.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.where(:category => "cars_auto_parts").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.where(:category => "cars_auto_parts").order('wage_upper_bound DESC')
+            else
+                Job.where(:category => "cars_auto_parts").recent
+            end
+  end
+
+  def estate
+    # @jobs = Job.all
+    # @jobs = Job.order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+                Job.where(:category => "estate").order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+                Job.where(:category => "estate").order('wage_upper_bound DESC')
+            else
+                Job.where(:category => "estate").recent
+            end
+  end
+
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
@@ -48,6 +100,6 @@ class Admin::JobsController < ApplicationController
   end
   private
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description,:category,  :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 end

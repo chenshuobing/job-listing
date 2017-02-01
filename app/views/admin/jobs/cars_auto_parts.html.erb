@@ -1,11 +1,11 @@
-
 <ul class="list-inline">
-  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("全部", jobs_path) %></li>
-  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("互联网/电子商务", internet_electronic_commerce_jobs_path) %></li>
-  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("金融／投资／证券", finace_investment_security_jobs_path)%></li>
-  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("汽车及零配件", cars_auto_parts_jobs_path)%></li>
-  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("房地产", estate_jobs_path)%></li>
+  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("全部", admin_jobs_path) %></li>
+  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("互联网/电子商务", internet_electronic_commerce_admin_jobs_path) %></li>
+  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("金融／投资／证券", finace_investment_security_admin_jobs_path)%></li>
+  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("汽车及零配件", cars_auto_parts_admin_jobs_path)%></li>
+  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("房地产", estate_admin_jobs_path)%></li>
 </ul>
+
 
 
 <div class="dropdown clearfix pull-right">
@@ -16,22 +16,22 @@
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider" >
     <li>
-      <%= link_to("按照薪资下限排序", estate_jobs_path(:order => "by_lower_bound")) %>
+      <%= link_to("按照薪资下限排序", cars_auto_parts_admin_jobs_path(:order => "by_lower_bound")) %>
     </li>
     <li>
-      <%= link_to("按照薪资上限排序", estate_jobs_path(:order => "by_upper_bound")) %>
+      <%= link_to("按照薪资上限排序", cars_auto_parts_admin_jobs_path(:order => "by_upper_bound")) %>
     </li>
     <li>
-      <%= link_to("按照发表时间排序", estate_jobs_path) %>
+      <%= link_to("按照发表时间排序", cars_auto_parts_admin_jobs_path) %>
     </li>
   </ul>
 
 </div>
 
 <table class="table table-boldered">
-  <!-- <div class="pull-right">
+  <div class="pull-right">
     <%= link_to("Add a job", new_job_path, :class => "btn btn-default")%>
-  </div> -->
+  </div>
    <thead>
     <tr>
       <td>职缺</td>

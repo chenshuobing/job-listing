@@ -1,5 +1,6 @@
 
 <ul class="list-inline">
+  <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("全部", jobs_path) %></li>
   <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("互联网/电子商务", internet_electronic_commerce_jobs_path) %></li>
   <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("金融／投资／证券", finace_investment_security_jobs_path)%></li>
   <li style="color: #99ccff"  class="col-sm-2 list-inline_3"><%= link_to("汽车及零配件", cars_auto_parts_jobs_path)%></li>
@@ -28,9 +29,9 @@
 </div>
 
 <table class="table table-boldered">
-  <div class="pull-right">
+  <!-- <div class="pull-right">
     <%= link_to("Add a job", new_job_path, :class => "btn btn-default")%>
-  </div>
+  </div> -->
    <thead>
     <tr>
       <td>职缺</td>
@@ -47,7 +48,19 @@
        <%= link_to(job.title, jobs_path(job)) %>
      </td>
      <td>
-       <%= job.category %>
+       <% if job.category == "internet_electronic_commerce" %>
+        <%= "互联网/电子商务" %>
+        <% end %>
+        <% if job.category == "finace_investment_security" %>
+         <%= "金融／投资／证券" %>
+         <% end %>
+         <% if job.category == "cars_auto_parts" %>
+          <%= "汽车及零配件" %>
+          <% end %>
+          <% if job.category == "estate" %>
+           <%= "房地产" %>
+           <% end %>
+           <!-- 用case语句可能比较简单 -->
      </td>
      <td>
        <%= job.wage_lower_bound %>
