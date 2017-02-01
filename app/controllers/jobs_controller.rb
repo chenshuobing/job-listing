@@ -46,7 +46,7 @@ class JobsController < ApplicationController
             end
   end
 
-  def car
+  def cars_auto_parts
     # @jobs = Job.all
     # @jobs = Job.published.order("created_at DESC")
     @jobs = case params[:order]

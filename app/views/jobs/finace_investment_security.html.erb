@@ -15,13 +15,13 @@
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider" >
     <li>
-      <%= link_to("按照薪资下限排序", internet_electronic_commerce_jobs_path(:order => "by_lower_bound")) %>
+      <%= link_to("按照薪资下限排序", finace_investment_security_jobs_path(:order => "by_lower_bound")) %>
     </li>
     <li>
-      <%= link_to("按照薪资上限排序", internet_electronic_commerce_jobs_path(:order => "by_upper_bound")) %>
+      <%= link_to("按照薪资上限排序", finace_investment_security_jobs_path(:order => "by_upper_bound")) %>
     </li>
     <li>
-      <%= link_to("按照发表时间排序", internet_electronic_commerce_jobs_path) %>
+      <%= link_to("按照发表时间排序", finace_investment_security_jobs_path) %>
     </li>
   </ul>
 
@@ -47,19 +47,7 @@
        <%= link_to(job.title, jobs_path(job)) %>
      </td>
      <td>
-       <% if job.category == "internet_electronic_commerce" %>
-        <%= "互联网/电子商务" %>
-        <% end %>
-        <% if job.category == "finace_investment_security" %>
-         <%= "金融／投资／证券" %>
-         <% end %>
-         <% if job.category == "cars_auto_parts" %>
-          <%= "汽车及零配件" %>
-          <% end %>
-          <% if job.category == "estate" %>
-           <%= "房地产" %>
-           <% end %>
-           <!-- 用case语句可能比较简单 -->
+       <%= job.category %>
      </td>
      <td>
        <%= job.wage_lower_bound %>
